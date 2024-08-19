@@ -1,13 +1,13 @@
-import axios from "axios";
+import axios from 'axios';
 
-const API_BASE_URL = "http://localhost:7410/api";
+const API_BASE_URL = 'http://localhost:7410/api';
 
 export interface Tag {
   name: string;
   id: string;
   address: number;
-  type: "Bit" | "Int" | "Float";
-  kind: "Input" | "Output";
+  type: 'Bit' | 'Int' | 'Float';
+  kind: 'Input' | 'Output';
   value: boolean | number;
   openCircuit: boolean;
   shortCircuit: boolean;
@@ -16,14 +16,8 @@ export interface Tag {
 }
 
 export const api = {
-  getTags: async (filters?: {
-    name?: string;
-    type?: string;
-    kind?: string;
-  }): Promise<Tag[]> => {
-    const response = await axios.get<Tag[]>(`${API_BASE_URL}/tags`, {
-      params: filters,
-    });
+  getTags: async (filters?: { name?: string; type?: string; kind?: string }): Promise<Tag[]> => {
+    const response = await axios.get<Tag[]>(`${API_BASE_URL}/tags`, { params: filters });
     return response.data;
   },
   getTagValues: async (tagIds: string[]): Promise<Tag[]> => {
