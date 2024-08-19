@@ -16,7 +16,7 @@ const Footer: React.FC = () => {
         </a>
 
         <p className="text-center text-muted-foreground mt-2">
-          © {new Date().getFullYear()} Iolo Evans Jones. All rights reserved.
+          F I/O Data Vis Tool © {new Date().getFullYear()} Iolo Evans Jones. All rights reserved.
         </p>
       </div>
     </footer>
